@@ -3,6 +3,8 @@ import downarrow from "../down-arrow.svg";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import { useGlobalContext } from "../context";
+import "animate.css/animate.min.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 function Section({
   title,
@@ -11,17 +13,22 @@ function Section({
   leftBtnText,
   rightBtnText,
 }) {
-  const { style } = useGlobalContext();
+  const { style, closeBurger } = useGlobalContext();
   return (
-    <Wrap bgImage={backgroundImg} className={style}>
+    <Wrap bgImage={backgroundImg} className={style} onClick={closeBurger}>
       <Fade bottom>
-        <div className="item-text">
-          <h1>{title}</h1>
-          <p>
-            {description}
-            <a href="https://www.tesla.com/">touchless delivery</a>
-          </p>
-        </div>
+        <AnimationOnScroll
+          animateIn="animate__shakeY"
+          animateOut="animate__bounceOutRight"
+        >
+          <div className="item-text">
+            <h1>{title}</h1>
+            <p>
+              {description}
+              <a href="https://www.tesla.com/">touchless delivery</a>
+            </p>
+          </div>
+        </AnimationOnScroll>
       </Fade>
       <div className="button-container">
         <Fade bottom>
