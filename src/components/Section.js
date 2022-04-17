@@ -15,7 +15,7 @@ function Section({
       <Fade bottom>
         <div className="item-text">
           <h1>{title}</h1>
-          <p> {description}</p>
+          <p> {description}<a href="#">touchless delivery</a></p>
         </div>
       </Fade>
       <div className="button-container">
@@ -47,4 +47,8 @@ const Wrap = styled.div`
   justify-content: space-between;
   align-items: center;
   background-image: ${(props) => `url("./images/${props.bgImage}")`};
+  a{
+      text-decoration: underline;
+      text-transform: Capitalize;
+  }
 `;
