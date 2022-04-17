@@ -5,13 +5,16 @@
   margin: 0;
   padding: 0;
 }
-
+a {
+  text-decoration: none;
+}
 body {
   width: 100%;
   overflow-x: hidden;
 }
 
 .container {
+
   height: 100vh;
 }
 
@@ -70,4 +73,44 @@ body {
     transform: translateY(3px);
   }
 }
+.header-container {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 60px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+}
 
+.header-menu {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.header-menu > a {
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0 10px;
+
+}
+.right-menu{
+  display: flex;
+  align-items: center;
+}
+.right-menu > a {
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0 10px;
+  flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-menu {
+    display: none;
+  }
+}
