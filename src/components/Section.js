@@ -2,6 +2,7 @@ import React from "react";
 import downarrow from "../down-arrow.svg";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
+import { useGlobalContext } from "../context";
 
 function Section({
   title,
@@ -10,8 +11,9 @@ function Section({
   leftBtnText,
   rightBtnText,
 }) {
+  const { style } = useGlobalContext();
   return (
-    <Wrap bgImage={backgroundImg} className="wrap">
+    <Wrap bgImage={backgroundImg} className={style}>
       <Fade bottom>
         <div className="item-text">
           <h1>{title}</h1>
@@ -50,8 +52,8 @@ const Wrap = styled.div`
   justify-content: space-between;
   align-items: center;
   background-image: ${(props) => `url("./images/${props.bgImage}")`};
-  a{
-      text-decoration: underline;
-      text-transform: Capitalize;
+  a {
+    text-decoration: underline;
+    text-transform: Capitalize;
   }
 `;

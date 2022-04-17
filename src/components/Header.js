@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import logo from "../logo.svg";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -6,10 +6,12 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import { selectCars } from "../features/car/carSlice";
 import { useSelector } from "react-redux";
+import { useGlobalContext } from "../context";
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
   const cars = useSelector(selectCars);
+  const { menuOpen, openBurger, closeBurger } = useGlobalContext();
 
   return (
     <nav className="header-container">
@@ -31,11 +33,11 @@ function Header() {
       <div className="right-menu">
         <a href="https://www.tesla.com/">Shop</a>
         <a href="https://www.tesla.com/">Account</a>
-        <CustomMenu onClick={() => setMenuOpen(true)} />
+        <CustomMenu onClick={openBurger} />
       </div>
-      <BurgerNav show={menuOpen}>
+      <BurgerNav show={menuOpen} className="scroll">
         <CloseWrapper>
-          <CustomClose onClick={() => setMenuOpen(false)} />
+          <CustomClose onClick={closeBurger} />
         </CloseWrapper>
         <div className="links">
           <li>
@@ -97,6 +99,7 @@ const CustomMenu = styled(MenuIcon)`
 
 const BurgerNav = styled.div`
   position: fixed;
+  overflow: scroll;
   padding-top: 20px;
   top: 0;
   bottom: 0;

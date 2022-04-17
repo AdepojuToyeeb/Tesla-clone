@@ -14,7 +14,6 @@ body {
 }
 
 .container {
-
   height: 100vh;
 }
 
@@ -96,9 +95,8 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   padding: 0 10px;
-
 }
-.right-menu{
+.right-menu {
   display: flex;
   align-items: center;
 }
@@ -120,6 +118,16 @@ body {
   padding-left: 24px;
 }
 
+.second-wrap {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  overflow: hidden;
+}
 
+.scroll::-webkit-scrollbar {
+  display: none;
+}
 
-   
