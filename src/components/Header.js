@@ -13,19 +13,24 @@ function Header() {
 
   return (
     <nav className="header-container">
-      <a>
+      <a href="https://www.tesla.com/">
         <img src={logo} alt="logo" />
       </a>
       <div className="header-menu">
-        {cars && cars.map((car, index) => <a key={index} href="#">{car}</a>)}
+        {cars &&
+          cars.map((car, index) => (
+            <a key={index} href="https://www.tesla.com/">
+              {car}
+            </a>
+          ))}
 
-        <a href="#">Solar roof</a>
+        <a href="https://www.tesla.com/">Solar roof</a>
 
-        <a href="#">Solar panel</a>
+        <a href="https://www.tesla.com/">Solar panel</a>
       </div>
       <div className="right-menu">
-        <a href="#">Shop</a>
-        <a href="#">Account</a>
+        <a href="https://www.tesla.com/">Shop</a>
+        <a href="https://www.tesla.com/">Account</a>
         <CustomMenu onClick={() => setMenuOpen(true)} />
       </div>
       <BurgerNav show={menuOpen}>
@@ -34,49 +39,49 @@ function Header() {
         </CloseWrapper>
         <div className="links">
           <li>
-            <a href="#">Existing Inventory</a>
+            <a href="https://www.tesla.com/">Existing Inventory</a>
           </li>
           <li>
-            <a href="#">Used Inventory</a>
+            <a href="https://www.tesla.com/">Used Inventory</a>
           </li>
           <li>
-            <a href="#">Trade-in</a>
+            <a href="https://www.tesla.com/">Trade-in</a>
           </li>
           <li>
-            <a href="#">Test Drive</a>
+            <a href="https://www.tesla.com/">Test Drive</a>
           </li>
           <li>
-            <a href="#">Cybertruck</a>
+            <a href="https://www.tesla.com/">Cybertruck</a>
           </li>
           <li>
-            <a href="#">Roadster</a>
+            <a href="https://www.tesla.com/">Roadster</a>
           </li>
           <li>
-            <a href="#">Semi</a>
+            <a href="https://www.tesla.com/">Semi</a>
           </li>
           <li>
-            <a href="#">Charging</a>
+            <a href="https://www.tesla.com/">Charging</a>
           </li>
           <li>
-            <a href="#">Powerwall</a>
+            <a href="https://www.tesla.com/">Powerwall</a>
           </li>
           <li>
-            <a href="#">Commercial Energy</a>
+            <a href="https://www.tesla.com/">Commercial Energy</a>
           </li>
           <li>
-            <a href="#">Utilities</a>
+            <a href="https://www.tesla.com/">Utilities</a>
           </li>
           <li>
-            <a href="#">Find us</a>
+            <a href="https://www.tesla.com/">Find us</a>
           </li>
           <li>
-            <a href="#">Support</a>
+            <a href="https://www.tesla.com/">Support</a>
           </li>
           <li>
-            <a href="#">Investor relations</a>
+            <a href="https://www.tesla.com/">Investor relations</a>
           </li>
           <li>
-            <a href="#">United States. English</a>
+            <a href="https://www.tesla.com/">United States. English</a>
           </li>
         </div>
       </BurgerNav>

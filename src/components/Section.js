@@ -15,7 +15,10 @@ function Section({
       <Fade bottom>
         <div className="item-text">
           <h1>{title}</h1>
-          <p> {description}<a href="#">touchless delivery</a></p>
+          <p>
+            {description}
+            <a href="https://www.tesla.com/">touchless delivery</a>
+          </p>
         </div>
       </Fade>
       <div className="button-container">
